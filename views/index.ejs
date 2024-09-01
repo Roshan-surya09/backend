@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All chats Mini-whatsapp </title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+            margin-left: 20px;
+        }
+    .chat{
+        background-color: aliceblue;
+        padding: 20px;
+        border-radius: 20px;
+        display: inline-block;
+    }
+    .msg{
+        border-radius: 20px;
+        padding: 1px;
+        background-color: blue;
+        color: white;
+    }
+    h2{
+        background-color: azure;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <h2> All chats !</h2>
+    <form method="GET" action="/chats/new">
+        <button>Add user!</button>
+    </form><br>
+
+    <% for(let chat of chats) { %>
+        <div class="chat">
+            <p>From : <b><%= chat.from %> </b></p>
+            <div class="msg">
+              <p class="msg"> Message : <%= chat.message %> </p>
+            </div>
+            <p> Received by :  <b><%= chat.to %></b> </p>
+            <hr>
+            <p><%= chat.created_at.toString().split(" ")[4] %> </p>
+            <p><%= chat.created_at.toString().split(" ").slice(0,4).join("-") %> </p>
+            <form method="get" action="/chats/<%= chat._id %>/edit">
+                <button>Edit Message</button> 
+            </form><br>
+
+            <form method="post" action="/chats/<%= chat._id%>?_method=DELETE">
+              <button> Delete Chat </button> 
+            </form>
+        </div>
+        <br><br>
+    <% } %>
+
+</body>
+</html>
+
+ 

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For new chat</title>
+    <style>
+        body{
+            background-color: azure;
+        }
+        form{
+            background-color: lightgreen;
+            color: white;
+            padding: 1px;
+            border-radius: 2px;
+            display: inline-block;
+        } 
+        #one{
+        background-color: azure;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <h2 id="one">Lets new chat.....</h2>
+
+    <form method="post" action="/chats">
+        <label for="from">From : </label>
+        <input type="text", name="from" placeholder="who are you"><br><br>
+
+        <label for="message">Message  : </label>
+        <textarea name="message" cols="50" rows="5">write your message</textarea><br><br>
+
+        <label for="to">To : </label>
+        <input type="text", name="to" placeholder="message for .."><br><br>
+
+        <button> Add !! </button>
+    </form>
+</body>
+</html>
