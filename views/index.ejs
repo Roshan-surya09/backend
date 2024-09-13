@@ -50,7 +50,11 @@
 
             <form method="post" action="/chats/<%= chat._id%>?_method=DELETE">
               <button> Delete Chat </button> 
-            </form>
+            </form><br>
+
+            <form method="get" action="/chats/<%= chat._id %>">
+                <button> Show message  </button> 
+            </form><br>
         </div>
         <br><br>
     <% } %>
